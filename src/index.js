@@ -5,6 +5,6 @@ const input2 = document.querySelector('[name="second"]')
 form.addEventListener('submit', event => {
   event.preventDefault()
   const firstValue = input1.value
-  input1.value = input2.value
-  input2.value = firstValue
+  input1.value = input2.value.toUpperCase()
+  input2.value = firstValue.toLowerCase()
 })
