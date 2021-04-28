@@ -1,14 +1,11 @@
-const form = document.querySelector('[data-form]')
 const box = document.querySelector('[data-box]')
-const input = document.querySelector('[name="class"]')
-const output = document.querySelector('[data-output]')
+const form = document.querySelector('[data-form]')
+const input = document.querySelector('[name="color"]')
 
 form.addEventListener('submit', event => {
   event.preventDefault()
-  box.className = 'box ' + input.value
-  const inputText = input.value // 'hello'
+  const color = input.value
+  box.style.backgroundColor = color
   input.value = ''
   input.focus()
-  const outputText = inputText.toUpperCase()
-  output.value = outputText
 })
