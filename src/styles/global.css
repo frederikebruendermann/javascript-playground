@@ -27,6 +27,5 @@ input {
 .box {
   width: 200px;
   height: 200px;
-  background: #aaa;
-  transition: all 0.4s;
+  background: steelblue;
 }
