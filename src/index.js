@@ -8,20 +8,6 @@ const bookmarksPage = document.querySelector('.page-bookmarks')
 const createPage = document.querySelector('.page-create')
 const settingsPage = document.querySelector('.page-settings')
 
-const hideAllPages = () => {
-  homePage.classList.add('hidden')
-  bookmarksPage.classList.add('hidden')
-  createPage.classList.add('hidden')
-  settingsPage.classList.add('hidden')
-}
-
-const deactivateButtons = () => {
-  buttonHome.classList.remove('active')
-  buttonBookmarks.classList.remove('active')
-  buttonCreate.classList.remove('active')
-  buttonSettings.classList.remove('active')
-}
-
 buttonHome.addEventListener('click', () => {
   hideAllPages()
   homePage.classList.remove('hidden')
@@ -53,3 +39,17 @@ buttonSettings.addEventListener('click', () => {
   deactivateButtons()
   buttonSettings.classList.add('active')
 })
+
+function hideAllPages() {
+  homePage.classList.add('hidden')
+  bookmarksPage.classList.add('hidden')
+  createPage.classList.add('hidden')
+  settingsPage.classList.add('hidden')
+}
+
+function deactivateButtons() {
+  buttonHome.classList.remove('active')
+  buttonBookmarks.classList.remove('active')
+  buttonCreate.classList.remove('active')
+  buttonSettings.classList.remove('active')
+}
