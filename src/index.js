@@ -8,46 +8,48 @@ const bookmarksPage = document.querySelector('.page-bookmarks')
 const createPage = document.querySelector('.page-create')
 const settingsPage = document.querySelector('.page-settings')
 
-buttonHome.addEventListener('click', () => {
-  homePage.classList.remove('hidden')
+const hideAllPages = () => {
+  homePage.classList.add('hidden')
   bookmarksPage.classList.add('hidden')
   createPage.classList.add('hidden')
   settingsPage.classList.add('hidden')
-  buttonHome.classList.add('active')
+}
+
+const deactivateButtons = () => {
+  buttonHome.classList.remove('active')
   buttonBookmarks.classList.remove('active')
   buttonCreate.classList.remove('active')
   buttonSettings.classList.remove('active')
+}
+
+buttonHome.addEventListener('click', () => {
+  hideAllPages()
+  homePage.classList.remove('hidden')
+
+  deactivateButtons()
+  buttonHome.classList.add('active')
 })
 
 buttonBookmarks.addEventListener('click', () => {
-  homePage.classList.add('hidden')
+  hideAllPages()
   bookmarksPage.classList.remove('hidden')
-  createPage.classList.add('hidden')
-  settingsPage.classList.add('hidden')
-  buttonHome.classList.remove('active')
+
+  deactivateButtons()
   buttonBookmarks.classList.add('active')
-  buttonCreate.classList.remove('active')
-  buttonSettings.classList.remove('active')
 })
 
 buttonCreate.addEventListener('click', () => {
-  homePage.classList.add('hidden')
-  bookmarksPage.classList.add('hidden')
+  hideAllPages()
   createPage.classList.remove('hidden')
-  settingsPage.classList.add('hidden')
-  buttonHome.classList.remove('active')
-  buttonBookmarks.classList.remove('active')
+
+  deactivateButtons()
   buttonCreate.classList.add('active')
-  buttonSettings.classList.remove('active')
 })
 
 buttonSettings.addEventListener('click', () => {
-  homePage.classList.add('hidden')
-  bookmarksPage.classList.add('hidden')
-  createPage.classList.add('hidden')
+  hideAllPages()
   settingsPage.classList.remove('hidden')
-  buttonHome.classList.remove('active')
-  buttonBookmarks.classList.remove('active')
-  buttonCreate.classList.remove('active')
+
+  deactivateButtons()
   buttonSettings.classList.add('active')
 })
